@@ -1,1 +1,1 @@
-[Read more words!](promo/customappbarbehaviour.gif)
+![](promo/customappbarbehaviour.gif)
