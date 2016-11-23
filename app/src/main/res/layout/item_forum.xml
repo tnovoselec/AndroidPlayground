@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/item_forum_padding">
+    <TextView
+            android:id="@+id/item_forum_title"
+            android:layout_width="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            android:text="How to raise table lamps"/>
+
+    <TextView
+            android:layout_alignParentEnd="true"
+            android:id="@+id/item_forum_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Updated 9 hours ago"/>
+
+    <TextView
+            android:id="@+id/item_forum_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_below="@id/item_forum_title"
+            android:text="Posted by rocky bird Kita"/>
+</RelativeLayout>
