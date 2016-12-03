@@ -2,6 +2,7 @@ package com.tnovoselec.playground;
 
 
 import com.bumptech.glide.Glide;
+import com.tnovoselec.playground.bridge.HomeBridge;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,15 @@ import butterknife.ButterKnife;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
 
+  public interface HomeListener {
+    void onHomeClicked(HomeBridge.HomeData homeData);
+  }
+
+  private final HomeListener homeListener;
+
+  public HomeAdapter(HomeListener homeListener) {
+    this.homeListener = homeListener;
+  }
 
   @Override
   public HomeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -34,12 +44,18 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     @BindView(R.id.item_home_image)
     ImageView imageView;
 
+
     public HomeViewHolder(View itemView) {
       super(itemView);
       ButterKnife.bind(this, itemView);
       Glide.with(itemView.getContext()).load(
           "http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/10/huge-interior-design-and-white-wall-also-glass-picture-sygnia-09.jpg")
           .into(imageView);
+      itemView.setOnClickListener(view -> {
+        int[] itemPosition = new int[2];
+        itemView.getLocationOnScreen(itemPosition);
+        homeListener.onHomeClicked(new HomeBridge.HomeData(itemPosition[1]));
+      });
     }
   }
 }

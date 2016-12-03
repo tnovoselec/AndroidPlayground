@@ -20,7 +20,7 @@
                 android:gravity="center_vertical"
                 android:padding="@dimen/activity_horizontal_margin">
             <TextView
-                    android:text="$930"
+                    android:text="@string/item_home_price"
                     android:textSize="22dp"
                     android:layout_weight="0"
                     android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
                     android:paddingEnd="@dimen/activity_horizontal_margin"/>
 
             <TextView
-                    android:text="SERVE ALL / SECURE / PURE"
+                    android:text="@string/serve_all_secure_pure"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/activity_horizontal_margin">
                 <TextView
-                        android:text="The Mediterranean style"
+                        android:text="@string/the_mediterranean_style"
                         android:textSize="16dp"
                         android:layout_weight="1"
                         android:textColor="@android:color/white"
@@ -66,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/white"
                         android:layout_weight="0"
-                        android:text="12/03/2016"/>
+                        android:text="@string/_12_03_2016"/>
             </LinearLayout>
         </FrameLayout>
 
