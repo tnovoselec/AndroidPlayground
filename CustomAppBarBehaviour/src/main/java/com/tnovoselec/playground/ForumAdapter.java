@@ -8,6 +8,16 @@ import android.view.ViewGroup;
 
 public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ForumViewHolder> {
 
+  public interface ForumListener{
+    void onPostSelected();
+  }
+
+  private final ForumListener forumListener;
+
+  public ForumAdapter(ForumListener forumListener) {
+    this.forumListener = forumListener;
+  }
+
   @Override
   public ForumViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_forum, parent, false);
@@ -32,7 +42,7 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ForumViewHol
       itemView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-          
+          forumListener.onPostSelected();
         }
       });
     }

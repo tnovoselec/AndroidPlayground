@@ -22,5 +22,6 @@ public class MainActivity extends AppCompatActivity {
     ButterKnife.bind(this);
     viewPager.setAdapter(new MainAdapter());
     tabLayout.setupWithViewPager(viewPager);
+
   }
 }

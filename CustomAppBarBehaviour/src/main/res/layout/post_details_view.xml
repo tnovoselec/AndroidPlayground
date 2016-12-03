@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="2dp"
+                android:padding="@dimen/post_details_padding">
+            <TextView
+                    android:id="@+id/post_details_title"
+                    android:layout_width="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_height="wrap_content"
+                    android:text="How to raise table lamps"/>
+
+            <TextView
+                    android:id="@+id/post_details_date"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Updated 9 hours ago"/>
+
+            <TextView
+                    android:id="@+id/post_details_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:layout_below="@id/post_details_title"
+                    android:text="Posted by rocky bird Kita"/>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:id="@+id/post_details_additional_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:id="@+id/post_details_additional_content_image"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:padding="16dp"
+                    android:layout_height="250dp"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/long_text"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
