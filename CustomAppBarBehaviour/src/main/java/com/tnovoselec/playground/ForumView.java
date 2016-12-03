@@ -1,6 +1,8 @@
 package com.tnovoselec.playground;
 
 
+import com.tnovoselec.playground.bridge.ForumBridge;
+
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
@@ -16,8 +18,7 @@ public class ForumView extends FrameLayout implements ForumAdapter.ForumListener
   @BindView(R.id.forum_recycler)
   RecyclerView recyclerView;
 
-  @BindView(R.id.forum_details)
-  PostDetailsView postDetailsView;
+  private ForumBridge forumBridge = ForumBridge.INSTANCE;
 
   public ForumView(Context context) {
     super(context);
@@ -37,14 +38,13 @@ public class ForumView extends FrameLayout implements ForumAdapter.ForumListener
   private void init(Context context){
     inflate(context, R.layout.forum_view, this);
     ButterKnife.bind(this, this);
-    postDetailsView.setVisibility(GONE);
     recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
     recyclerView.setAdapter(new ForumAdapter(this));
     recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
   }
 
   @Override
-  public void onPostSelected() {
-    postDetailsView.setVisibility(VISIBLE);
+  public void onPostSelected(ForumBridge.ForumData forumData) {
+    forumBridge.next(forumData);
   }
 }

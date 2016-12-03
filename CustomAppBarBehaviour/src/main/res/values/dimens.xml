@@ -3,6 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="appbar_margin">8dp</dimen>
-    <dimen name="item_forum_padding">32dp</dimen>
-    <dimen name="post_details_padding">16dp</dimen>
+    <dimen name="item_forum_padding">24dp</dimen>
+    <dimen name="post_details_padding_horizontal">16dp</dimen>
+    <dimen name="post_details_padding_vertical">24dp</dimen>
+    <dimen name="post_details_content_elevation">2dp</dimen>
 </resources>

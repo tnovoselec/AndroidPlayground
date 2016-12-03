@@ -32,13 +32,21 @@
                 app:tabIndicatorColor="@android:color/transparent"
                 app:tabMode="fixed"/>
     </android.support.design.widget.AppBarLayout>
-    <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
+    <FrameLayout
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
-    </android.support.v4.view.ViewPager>
 
+        <com.tnovoselec.playground.PostDetailsView
+                android:id="@+id/forum_details"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+    </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

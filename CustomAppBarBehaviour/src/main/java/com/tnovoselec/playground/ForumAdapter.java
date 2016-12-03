@@ -1,15 +1,21 @@
 package com.tnovoselec.playground;
 
 
+import com.tnovoselec.playground.bridge.ForumBridge.ForumData;
+
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ForumViewHolder> {
 
-  public interface ForumListener{
-    void onPostSelected();
+  public interface ForumListener {
+
+    void onPostSelected(ForumData forumData);
   }
 
   private final ForumListener forumListener;
@@ -36,14 +42,20 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ForumViewHol
 
   class ForumViewHolder extends RecyclerView.ViewHolder {
 
-    public ForumViewHolder(View itemView) {
-      super(itemView);
+    @BindView(R.id.item_forum_title)
+    TextView forumTitle;
 
-      itemView.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-          forumListener.onPostSelected();
-        }
+    ForumViewHolder(View itemView) {
+      super(itemView);
+      ButterKnife.bind(this, itemView);
+
+
+      itemView.setOnClickListener(view -> {
+        int[] titlePosition = new int[2];
+        forumTitle.getLocationOnScreen(titlePosition);
+
+        ForumData forumData = new ForumData(titlePosition[0], titlePosition[1]);
+        forumListener.onPostSelected(forumData);
       });
     }
   }

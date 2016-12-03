@@ -17,6 +17,7 @@
             android:layout_alignParentEnd="true"
             android:id="@+id/item_forum_date"
             android:layout_width="wrap_content"
+            android:textSize="10sp"
             android:layout_height="wrap_content"
             android:text="Updated 9 hours ago"/>
 
@@ -26,5 +27,5 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:layout_below="@id/item_forum_title"
-            android:text="Posted by rocky bird Kita"/>
+            android:text="Posted by rocky bird"/>
 </RelativeLayout>

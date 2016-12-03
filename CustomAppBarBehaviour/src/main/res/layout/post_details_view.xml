@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<android.support.v4.widget.NestedScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-    <LinearLayout
-            android:orientation="vertical"
+        android:fillViewport="true"
+        android:scrollbars="none">
+    <RelativeLayout
+            android:id="@+id/post_details_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp">
+            android:background="@android:color/white"
+            android:layout_height="wrap_content">
 
         <RelativeLayout
+                android:id="@+id/post_details_content_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:outlineProvider="background"
                 android:background="@android:color/white"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:elevation="2dp"
-                android:padding="@dimen/post_details_padding">
+                android:paddingStart="@dimen/post_details_padding_horizontal"
+                android:paddingEnd="@dimen/post_details_padding_horizontal"
+                android:paddingTop="@dimen/post_details_padding_vertical"
+                android:paddingBottom="@dimen/post_details_padding_vertical">
             <TextView
                     android:id="@+id/post_details_title"
                     android:layout_width="wrap_content"
@@ -33,6 +37,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="10sp"
                     android:text="Updated 9 hours ago"/>
 
             <TextView
@@ -41,27 +46,45 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_horizontal_margin"
                     android:layout_below="@id/post_details_title"
-                    android:text="Posted by rocky bird Kita"/>
+                    android:text="Posted by rocky bird"/>
+
+            <ImageView
+                    android:id="@+id/post_details_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/post_details_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_action_name"/>
         </RelativeLayout>
 
         <LinearLayout
-                android:id="@+id/post_details_additional_content"
+                android:id="@+id/post_details_additional_content_container"
+                android:layout_below="@id/post_details_content_container"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
+                android:visibility="gone"
                 android:background="@android:color/white"
                 android:layout_height="wrap_content">
             <ImageView
                     android:id="@+id/post_details_additional_content_image"
                     android:scaleType="centerCrop"
                     android:layout_width="match_parent"
-                    android:padding="16dp"
+                    android:padding="24dp"
                     android:layout_height="250dp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:lineSpacingMultiplier="1.5"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
                     android:text="@string/long_text"/>
         </LinearLayout>
 
-    </LinearLayout>
-</ScrollView>
+        <View
+                android:id="@+id/animation_helper_view"
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
